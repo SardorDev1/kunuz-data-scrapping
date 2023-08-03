@@ -4,8 +4,7 @@ const cheerio = require('cheerio');
 const cors = require("cors")
 const app = express();
 const port = 3000;
-const serverless = require('serverless-http')
-const router = express.Router();
+
 app.use(cors())
 const url = 'https://kun.uz';
 
@@ -45,4 +44,3 @@ app.listen(port, () => {
     console.log(`Server http://localhost:${port} portida ishga tushdi.`);
 });
 
-module.exports.handler = serverless(app)
