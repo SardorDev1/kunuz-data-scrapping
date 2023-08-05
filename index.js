@@ -3,44 +3,71 @@ const axios = require('axios');
 const cheerio = require('cheerio');
 const cors = require("cors")
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+const path = require('path');
+// hududlar
+const Toshkent = require('./routes/ToshkentCity')
+const Navoiy = require('./routes/Navoi')
+const Jizzax = require('./routes/Jizzax')
+const Xorazm = require('./routes/Xorazm')
+const ToshkentViloyati = require('./routes/Toshkent')
+const Karakalpak = require('./routes/Qoraqalpogiston')
+const Surxondaryo = require('./routes/Surxondaryo')
+const Samarqand = require('./routes/Samarqand')
+const Qashqadaryo = require('./routes/Qashqadaryo')
+const Sirdaryo = require('./routes/Sirdaryo')
+const Namangan = require('./routes/Namangan')
+const Bukhara = require('./routes/Buxoro')
+const andijon = require('./routes/Andijon')
+const fargona = require('./routes/Fargona')
+// bolimlar
+const FanTexnika = require('./routes/FanTexnika')
+const UzbekistanNews = require('./routes/UzbekistanNews')
+const Jaxon = require('./routes/Jaxon')
+const Ixsodiot = require('./routes/Ixsodiot')
+const NuqtaiNazar = require('./routes/NuqtaiNazar')
+const Sport = require('./routes/Sport')
+const Jamiyat = require('./routes/JamiyatNews')
+
+
 
 app.use(cors())
-const url = 'https://kun.uz/news/category/tehnologia';
+app.use(express.static(path.join(__dirname, 'public')));
 
+
+// bolimlar uchun yangiliklar
+app.use('/fan-texnika', FanTexnika);
+app.use('/uzbekistan-news', UzbekistanNews);
+app.use('/jaxon', Jaxon);
+app.use('/ixsodiot', Ixsodiot);
+app.use('/nuqtai-nazar', NuqtaiNazar);
+app.use('/sport', Sport);
+app.use('/jamiyat', Jamiyat);
+
+
+// hududlar uchun yangiliklar 
+app.use('/fargona-news', fargona);
+app.use('/toshkentcity-news', Toshkent);
+app.use('/navoiy-news', Navoiy);
+app.use('/jizzax-news', Jizzax);
+app.use('/xorazm-news', Xorazm);
+app.use('/toshkent-news', ToshkentViloyati);
+app.use('/qoraqalpogiston-news', Karakalpak);
+app.use('/surxondaryo-news', Surxondaryo);
+app.use('/samarqand-news', Samarqand);
+app.use('/qashqadaryo-news', Qashqadaryo);
+app.use('/sirdaryo-news', Sirdaryo);
+app.use('/namangan-news', Namangan);
+app.use('/buxoro-news', Bukhara);
+app.use('/andijon-news', andijon);
 app.get('/', (req, res) => {
-    axios.get(url)
-        .then(response => {
-            const html = response.data;
-            const $ = cheerio.load(html);
-
-            const result = [];
-
-            $('div.row > div.col-md-4 > div.news').each((index, element) => {
-                const imgSrc = $(element).find('a.news__img > img').attr('src');
-                const date = $(element).find('div.news-meta > span').text()
-                const title = $(element).find('a.news__title').text();
-                const link = $(element).find('a.news__title').attr('href');
-              
-
-                result.push({
-                    imgSrc: imgSrc,
-                    date: date,
-                    title: title,
-                    link: link
-                });
-            });
-
-            // Bu joyda API-ga yuborishni bajaramiz
-            // result ma'lumotlarini JSON formatda qaytarish
-            res.json(result);
-           
-        })
-        .catch(error => {
-            console.log('Xato yuz berdi:', error);
-            res.status(500).json({ error: 'Server xatosi yuz berdi.' });
-        });
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+
+
+
+
 
 app.listen(port, () => {
     console.log(`Server http://localhost:${port} portida ishga tushdi.`);

@@ -1,0 +1,32 @@
+{
+    "Result": {
+        "news": [
+            {
+                "id": 1,
+                "imgSrc": "https://...",
+                "date": "16:42",
+                "title": "Nissan Tiida 2024, Chevrolet Monza ва рақамли рубл – ҳафта технодайжести",
+                "link": "https:..."
+            }
+        ],
+        "resultBigNew": [
+            {
+                "id": 1,
+                "imgSrc": "https...jpg",
+                "date": "20:11 / 22.07.2023",
+                "title": "Chevrolet Traverse 2024 ва қоғоз каби ўраладиган янги iPhone – ҳафта технодайжести",
+                "link": "https://...",
+                "descraption": " Kun.uz якунланаётган ҳафтадаги технология ва илм-фанга оид энг қизиқарли хабарларни жамлади."
+            }
+        ],
+        "resultSmallNews": [
+            {
+                "id": 1,
+                "imgSrc": "https://...",
+                "date": "15:41 / 11.05.2023",
+                "title": "“Иккитаси бирда”: Bentley’дан Porsche’гача — йўлтанламас спорткарлар (фотожамланма)",
+                "link": "https://..."
+            }
+        ]
+    }
+}
