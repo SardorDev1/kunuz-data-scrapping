@@ -28,7 +28,7 @@ const Ixsodiot = require('./routes/Ixsodiot')
 const NuqtaiNazar = require('./routes/NuqtaiNazar')
 const Sport = require('./routes/Sport')
 const Jamiyat = require('./routes/JamiyatNews')
-
+const IndexNews = require('./routes/IndexNews')
 
 
 app.use(cors())
@@ -42,6 +42,7 @@ app.use('/jaxon', Jaxon);
 app.use('/ixsodiot', Ixsodiot);
 app.use('/nuqtai-nazar', NuqtaiNazar);
 app.use('/sport', Sport);
+app.use('/index', IndexNews);
 app.use('/jamiyat', Jamiyat);
 
 
