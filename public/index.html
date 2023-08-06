@@ -7,7 +7,9 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <!--====== Title ======-->
     <title>Kun.uz Api Xizmati</title>
 
@@ -44,9 +46,30 @@
             font-family: Arial, sans-serif;
         }
 
-        .json-box pre {
-            font-size: 12px;
-            color: white;
+        .codetutorial {
+            background-color: #2a2a2a;
+            width: 100%;
+
+
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .codetutorial pre span {
+            color: #e75e28;
+            font-weight: 700;
+        }
+
+        .codetutorial pre .linkcode {
+            color: #7EBA6C;
+        }
+
+        .codetutorial pre .arrowcode {
+            color: #67CDCC;
         }
 
         .json-key {
@@ -132,7 +155,7 @@
                             malumotlar olindi
                         </p>
                         <div class="button">
-                            <a href="" class="btn primary-btn">Boshlash</a>
+                            <a href="#tutorial" class="btn primary-btn">Boshlash</a>
                             <a href="https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM"
                                 class="glightbox video-button">
                                 <span class="btn icon-btn rounded-full">
@@ -328,7 +351,7 @@
     <!--====== ABOUT FIVE PART ENDS ======-->
 
     <!-- ===== service-area start ===== -->
-  
+
     <!-- ===== service-area end ===== -->
 
 
@@ -346,10 +369,12 @@
                         <h2>API xizmat mutloqo <br />tekin va reklamalar yoq</h2>
                         <p>
                             bu dasturda siz kun.uzni barcha yangiliklar bo'limiga ega bo'lasiz<br />
-                            jumladan Jaxon Yangiliklari , O'zbekiston Yangiliklari , Fan Texnika Yangiliklari , Ixsodiot ,Jamiyat , Sport va O'zbekston hududlar yangiliklariga ega bo'lasiz dasturda 40tan ortiq yangiliklar har kuni yangilanadi!
-                         </p>
+                            jumladan Jaxon Yangiliklari , O'zbekiston Yangiliklari , Fan Texnika Yangiliklari , Ixsodiot
+                            ,Jamiyat , Sport va O'zbekston hududlar yangiliklariga ega bo'lasiz dasturda 40tan ortiq
+                            yangiliklar har kuni yangilanadi!
+                        </p>
                         <div class="light-rounded-buttons">
-                            <a href="javascript:void(0)" class="btn primary-btn-outline">API Xizmatni ishlatish</a>
+                            <a href="#tutorial" class="btn primary-btn-outline">API Xizmatni ishlatish</a>
                         </div>
                     </div>
                 </div>
@@ -429,132 +454,143 @@
 
         </div>
     </div>
-    <div id="clients" class="brand-area section">
-        <!--======  Start Section Title Five ======-->
-        <div class="section-title-five">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="content">
-                            <h6>Meet our Clients</h6>
-                            <h2 class="fw-bold">Our Awesome Clients</h2>
-                            <p>
-                                There are many variations of passages of Lorem Ipsum available,
-                                but the majority have suffered alteration in some form.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- row -->
-            </div>
-            <!-- container -->
-        </div>
-        <!--======  End Section Title Five ======-->
-        <div class="container">
+    <hr>
+    <section id="tutorial">
+        <h1>O'zingiz sinab ko'ring!!!</h1>
+
+
+        <div class="container  ">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 col-12">
-                    <div class="clients-logos">
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/graygrids.svg" alt="Brand Logo Images" />
+                <div class="col-lg-12">
+
+                    <div class="box">
+                        <h2>Ishga Tushirish kodi:</h2>
+                        <p>scriptni ishga tushiring va konsolda resultni ko'rasiz</p>
+                        <div id="codes" class="codetutorial">
+                            <pre>
+<span>fetch</span>(<span class="linkcode">'https://jsonplaceholder.typicode.com/todos/1'</span>)
+      .<span>then</span>(response <span class="arrowcode" >=></span> response.<span>json</span>())
+      .<span>then</span>(json <span class="arrowcode" >=></span> console.<span>log</span>(json))
+    </pre>
                         </div>
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/uideck.svg" alt="Brand Logo Images" />
+
+                        <p>kodni shu yerni o'zida ishga tekshirib ko'ring!</p>
+
+                        <button onclick="RunScript()" class="button btn btn-success">Run Script</button>
+
+                        <div id="jsonrunscript" class="codetutorial">
+
+                            <button onclick="Clear()" class="Clear btn-success">clear</button>
+                            <pre id="resultCode"></pre>
                         </div>
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/ayroui.svg" alt="Brand Logo Images" />
-                        </div>
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/lineicons.svg" alt="Brand Logo Images" />
-                        </div>
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/tailwindtemplates.svg" alt="Brand Logo Images" />
-                        </div>
-                        <div class="single-image">
-                            <img src="assets/images/client-logo/ecomhtml.svg" alt="Brand Logo Images" />
-                        </div>
+
+
+                    </div>
+                    <div class="Routes mt-5">
+                        <h4>Marshrutlar:</h4>
+
+                        <p><a href="/index">/index</a>: bu Marshrutda siz kun uz saytini bosh sahifasidagi yangiliklarni
+                            olishingiz mumkin</p>
+                        <p><a href="/fan-texnika">/fan-texnika</a>: ushbu Marshrutda siz fan va texnikaga oid
+                            yangiliklarni qabul qilishingiz mumkin </p>
+                        <p><a href="/jamiyat">/jamiyat</a>: ushbu sahifada siz kun uz saytini jamiyatga oid
+                            yangiliklarni
+                            qabul qilishingiz mumkin </p>
+                        <p><a href="/ixsodiot">/ixsodiot</a>: bunda siz ixsodiot haqida yangiliklarni olishingiz mumkin
+                        </p>
+                        <p><a href="/jaxon">/jaxon</a>: bu bo'limda siz jahon yangiliklarini olishingiz mumkin
+                        </p>
+                        <p><a href="/uzbekistan-news">/uzbekistan-news</a>: bu bo'limda siz uzbekiston yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/nuqtai-nazar">/nuqtai-nazar</a>: bu bo'limda siz nuqtai-nazar yangiliklarini
+                            olishingiz mumkin
+                        </p>
+
+
+                        <!-- Hududlar ---------------------------------------------------------------------- -->
+
+                        <h4>Hududlar Yangiliklari Marshrutlari:</h4>
+                        <p><a href="/fargona-news">/fargona-news</a>: bu sahifada Farg'ona yangiliklarini olishingiz
+                            mumkin</p>
+                        <p><a href="/toshkentcity-news">/toshkentcity-news</a>: ushbu Marshrutda siz Toshkent Shahriga
+                            oid
+                            yangiliklarni qabul qilishingiz mumkin </p>
+                        <p><a href="/navoiy-news">/navoiy-news</a>: ushbu sahifada siz Navoiy haqida yangiliklarni
+                            olishingiz mumkin </p>
+                        <p><a href="/jizzax-news">/jizzax-news</a>: bunda siz Jizzax haqida yangiliklarni olishingiz
+                            mumkin
+                        </p>
+                        <p><a href="/xorazm-news">/xorazm-news</a>: bu bo'limda siz Xorazm yangiliklarini olishingiz
+                            mumkin
+                        </p>
+                        <p><a href="/toshkent-news">/toshkent-news</a>: bu bo'limda siz Toshkent viloyatini
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/qoraqalpogiston-news">/qoraqalpogiston-news</a>: bu bo'limda siz Qoraqalpog'iston
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/surxondaryo-news">/surxondaryo-news</a>: bu bo'limda siz Surxondaryo
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/samarqand-news">/samarqand-news</a>: bu bo'limda siz Samarqand
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/qashqadaryo-news">/qashqadaryo-news</a>: bu bo'limda siz Qashqadaryo
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/sirdaryo-news">/sirdaryo-news</a>: bu bo'limda siz Sirdaryo
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/namangan-news">/namangan-news</a>: bu bo'limda siz Namanganga oid
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/buxoro-news">/buxoro-news</a>: bu bo'limda siz Buxoroga oid
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
+                        <p><a href="/andijon-news">/andijon-news</a>: bu bo'limda siz Andijonga oid
+                            yangiliklarini
+                            olishingiz mumkin
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- End Brand Area -->
-    <h1 style="text-align: center; margin-bottom: 20px; margin-top: 20px;">Aloqa</h1>
-    <!-- ========================= contact-section start ========================= -->
-    <section id="contact" class="contact-section">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="contact-item-wrapper">
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-xl-12">
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="lni lni-phone"></i>
-                                    </div>
-                                    <div class="contact-content">
-                                        <h4>Contact</h4>
-                                        <p>+998933406870</p>
-                                        <p>sardordev01@gmail.com</p>
-                                    </div>
-                                </div>
-                            </div>
+        <script>
+
+            const Clear = () => {
+                document.querySelector('#resultCode').innerHTML = ''
+            }
+            const RunScript = () => {
+                const resultCode = document.querySelector('#resultCode')
+                fetch('/fan-texnika')
+                    .then(response => response.json())
+                    .then(res => {
+                        console.log(res);
+                        resultCode.innerHTML = JSON.stringify(res, null, 2)
+
+                    })
+
+            }
+        </script>
 
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-item-wrapper">
-                        <div class="row">
-                            <div class="col-12 col-md-6 col-xl-12">
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="lni lni-map-marker"></i>
-                                    </div>
-                                    <div class="contact-content">
-                                        <h4>Address</h4>
-                                        <p>Bayaut, region Sirdarya</p>
-                                        <p>Uzbekistan</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="contact-item-wrapper">
-                        <div class="row">
 
 
-                            <div class="col-12 col-md-6 col-xl-12">
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="lni lni-instagram"></i>
-                                    </div>
-                                    <div class="contact-content">
-                                        <h4>Instagram</h4>
-                                        <a href="https://www.instagram.com/sardordev1/">
-                                            <p>@sardordev1</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </section>
-    <!-- ========================= contact-section end ========================= -->
+    <!-- End Brand Area -->
 
-    <!-- ========================= map-section end ========================= -->
-
-    <!-- ========================= map-section end ========================= -->
-
-    <!-- Start Footer Area -->
-    <footer>
+    <footer style="margin-top: 200px;">
         <div class="container_footer">
             <img src="assets/images/LogoBackgroundremoved.png" alt="">
             <p>© 2023 SardorDev</p>
