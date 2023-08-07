@@ -22,10 +22,11 @@ router.get('/', async (req, res) => {
                 const contentDate = $content('div.single-header__meta > div.date').text();
                 // Boshqa malumotlarni olish
                 // ...
-
+                const contentView = $content('div.single-header__meta > div.view').text();
                 const contentNews = {
                     date: contentDate,
-                    // ... (boshqa malumotlar)
+                    views: contentView
+
                 };
 
                 return contentNews;
@@ -58,7 +59,7 @@ router.get('/', async (req, res) => {
                 content: contentPromise // add content here
             });
         });
-        $('div.top-news > div.top-news__big').each((index, element) => {
+        $('div.top-news > div.top-news__big').each( async (index, element) => {
             const imgSrc = $(element).find('span.big-news__img > img').attr('src');
             const date = $(element).find('span.big-news__content > div.news-meta > span').text();
             const title = $(element).find('span.big-news__title').text();
@@ -74,7 +75,7 @@ router.get('/', async (req, res) => {
                 title: title,
                 link: link,
                 descraption: descraption,
-                content: contentPromise // add content here
+                content:await  contentPromise // add content here
             });
         });
 

@@ -5,7 +5,7 @@ const cors = require("cors")
 const app = express();
 app.use(cors())
 const router = express.Router();
-const url = 'https://kun.uz/region/jizzax';
+const url = 'https://kun.uz/region/sirdaryo';
 
 router.get('/', async (req, res) => {
     try {
