@@ -61,6 +61,9 @@ app.use('/sirdaryo-news', Sirdaryo);
 app.use('/namangan-news', Namangan);
 app.use('/buxoro-news', Bukhara);
 app.use('/andijon-news', andijon);
+
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
